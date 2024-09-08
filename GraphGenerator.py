@@ -139,7 +139,7 @@ class GraphGenerator():
 
     def top_movies_comparison(self):
         top_movies = self.rt_movies.nlargest(10, 'audience_count')
-        top_movies = top_movies.drop(columns=['tomatometer_count','audience_count','tomatometer_top_critics_count','tomatometer_fresh_critics_count','tomatometer_rotten_critics_count'])
+        top_movies = top_movies.drop(columns=['tomatometer_count','audience_count','tomatometer_top_critics_count','tomatometer_fresh_critics_count','tomatometer_rotten_critics_count','runtime'])
         top_movies.set_index('movie_title', inplace=True)
         top_movies.plot(kind='barh', figsize=(14, 8))
         plt.title('Nota dos Críticos x Nota da Audiência para o top10 filmes mais avaliados')
